@@ -93,7 +93,7 @@ cDay.forEach(function(cHour) {
 
     //creates text area for schedule
     var hrToDo = $("<section>")
-        .attr({"class": "col-6 description p-0"});
+        .attr({"class": "col-md-9 description p-0"});
     var txtData =$("<textarea>");
     
     hrToDo.append(txtData);
@@ -111,7 +111,16 @@ cDay.forEach(function(cHour) {
         "class": "future"
         })
     }
-    hrRow.append(hrDisp, hrToDo);
+
+    ///creates the save button and feature
+    var saveButton = $("<i class = 'fa fa-save fa-lg'></i> ")
+    var saveToDo = $("<button>")
+        .attr({"class": "col-md-1 saveBtn"});
+
+    ///Append everything to page!!!!
+    saveToDo.append(saveButton);
+    hrRow.append(hrDisp, hrToDo, saveToDo);
+    
 })
 
 
