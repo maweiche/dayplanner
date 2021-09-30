@@ -79,25 +79,25 @@ var cDay = [
 
 cDay.forEach(function(cHour) {
 
-    // create timeblocks as rows
+    // create timeblocks as rows by creating a form tag and adding a class:row attribute to it 
     var hrRow = $("<form>").attr({
         "class" : "row"
     });
     $(".container").append(hrRow);
 
     //creates time display
-    var hrRule = $("<div>")
+    var hrDisp = $("<div>")
         .text(`${cHour.hour}${cHour.ampm}`)
         .attr({"class": "col-md-2 hour"});
 
 
     //creates text area for schedule
-    var hrDisp = $("<div>")
+    var hrToDo = $("<section>")
         .attr({"class": "col-6 description p-0"});
     var txtData =$("<textarea>");
     
-    hrDisp.append(hrRow);
-    txtData.attr("id", cDay.id);
+    hrToDo.append(txtData);
+    txtData.attr("id", cHour.id);
     if (cHour.time < moment().format("HH")) {
         txtData.attr({
             "class" : "past",
@@ -111,7 +111,7 @@ cDay.forEach(function(cHour) {
         "class": "future"
         })
     }
-    // hrRow.append(hrRule, hrDisp);
+    hrRow.append(hrDisp, hrToDo);
 })
 
 
