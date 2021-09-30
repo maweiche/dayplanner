@@ -1,8 +1,3 @@
-//Current hour
-
-let currentHour = moment().format("HH");
-
-
 //Current date
 let updateDate = function () {
     let currentDate = moment().format("dddd, MMMM Do YYYY");
@@ -83,37 +78,40 @@ var cDay = [
 ]
 
 cDay.forEach(function(cHour) {
-    var taskInput = $(".textarea");
 
     // create timeblocks as rows
-    var hrRow = $("<section>").attr({
+    var hrRow = $("<form>").attr({
         "class" : "row"
     });
     $(".container").append(hrRow);
 
     //creates time display
+    var hrRule = $("<div>")
+        .text(`${cHour.hour}${cHour.ampm}`)
+        .attr({"class": "col-md-2 hour"});
 
 
     //creates text area for schedule
-    var hrDisp = $("<p>")
+    var hrDisp = $("<div>")
         .attr({"class": "col-6 description p-0"});
     var txtData =$("<textarea>");
     
     hrDisp.append(hrRow);
     txtData.attr("id", cDay.id);
-    if (cHour.time < currentHour) {
+    if (cHour.time < moment().format("HH")) {
         txtData.attr({
             "class" : "past",
         })
-    } else if (cHour.time === currentHour) {
+    } else if (cHour.time === moment().format("HH")) {
         txtData.attr({
             "class": "present"
         })
-    } else if (cHour.time > currentHour) {
+    } else if (cHour.time > moment().format("HH")) {
         txtData.attr({
         "class": "future"
         })
     }
+    // hrRow.append(hrRule, hrDisp);
 })
 
 
@@ -125,5 +123,4 @@ cDay.forEach(function(cHour) {
 
 setInterval(updateTime, 1000);
 updateDate();
-
 
