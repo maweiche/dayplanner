@@ -76,7 +76,19 @@ var cDay = [
         task: "",
     }
 ]
+//save text to localStorage
+function saveText() {
+    localStorage.setItem("cDay", JSON.stringify(cDay));
+    console.log("this text saved :", saveText);
+}
+//
+function displayText() {
+    cDay.forEach(function(cHour) {
+        $(`#${cHour.id}`).val(cHour.task);
+    })
+}
 
+////For each loop to iterate through every element in cDay array
 cDay.forEach(function(cHour) {
 
     // create timeblocks as rows by creating a form tag and adding a class:row attribute to it 
@@ -112,7 +124,7 @@ cDay.forEach(function(cHour) {
         })
     }
 
-    ///creates the save button and feature
+    ///creates the save button using an i tag and logo, and a button tag to append the i class to
     var saveButton = $("<i class = 'fa fa-save fa-lg'></i> ")
     var saveToDo = $("<button>")
         .attr({"class": "col-md-1 saveBtn"});
