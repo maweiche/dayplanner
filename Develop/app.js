@@ -88,6 +88,20 @@ function displayText() {
     })
 }
 
+//view localStorage data if it exists
+function init () {
+    var storedCDay = JSON.parse(localStorage.getItem("cDay"));
+
+    if (storedCDay) {
+        cDay = storedCDay
+    } else {
+        alert("Nothing to save!")
+        return;
+    }
+    saveText();
+    displayText();
+}
+
 ////For each loop to iterate through every element in cDay array
 cDay.forEach(function(cHour) {
 
@@ -139,8 +153,12 @@ cDay.forEach(function(cHour) {
 $(".saveBtn").on("click", function(event) {
     event.preventDefault();
     //establish an index of what is being saved
-    var saveIndex = $(this).sibilings
-}
+    var saveIndex = $(this).siblings(".description").children(".future").attr("id");
+    cDay[saveIndex].task = $(this).siblings(".description").children(".future").val()
+    console.log(saveIndex);
+    saveText();
+    displayText();
+})
 
 
 
