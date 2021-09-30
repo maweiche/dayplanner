@@ -141,7 +141,7 @@ cDay.forEach(function(cHour) {
     ///creates the save button using an i tag and logo, and a button tag to append the i class to
     var saveButton = $("<i class = 'fa fa-save fa-lg'></i> ")
     var saveToDo = $("<button>")
-        .attr({"class": "saveBtn"});
+        .attr({"class": "col-md saveBtn"});
 
     ///Append everything to page!!!!
     saveToDo.append(saveButton);
@@ -159,12 +159,6 @@ $(".saveBtn").on("click", function(event) {
     saveText();
     displayText();
 })
-
-
-
-
-
-
 setInterval(updateTime, 1000);
 updateDate();
-
+init();

@@ -1,89 +1,39 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Day Planner
 
-## Your Task
+The goal of this project was to create a simple Day planner calendar application that allows the user to save events for each hour of the day. The app operates in your browser using dynamically updated HTML and CSS powered by jQuery. Each day, the app will update with the current date at the top of the page and will display a green text area for every hour that has not yet occured in the day. For the current hour of the day, the app will display a red text area and for any past hour, a grey text area. If text is present, the user can click the blue save button which will then locally store the text which will still display upon a page refresh. This app is helps the user manage their business hours effectively.
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Getting Started
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
-
-## User Story
-
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
-
-The following animation demonstrates the application functionality:
-
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 
-## Grading Requirements
+## Built With
 
-This homework is graded based on the following criteria: 
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-### Technical Acceptance Criteria: 40%
+## Deployed Link
 
-* Satisfies all of the above acceptance criteria plus the following:
+* [See Live Site](https://maweiche.github.io/dayplanner/)
 
-  * Uses a date utility library to work with date and time
 
-### Deployment: 32%
+## Authors
 
-* Application deployed at live URL
+* **Matthew Weichel** 
 
-* Application loads with no errors
 
-* Application GitHub URL submitted
+- [Link to Github](https://github.com/maweiche)
 
-* GitHub repo contains application code
 
-### Application Quality: 15%
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-* Application user experience is intuitive and easy to navigate
+## License
 
-* Application user interface style is clean and polished
+This project is licensed under the MIT License 
 
-* Application resembles the mock-up functionality provided in the homework instructions
+## Acknowledgments
 
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+* Hat tip to anyone whose code, libraries, packages, or UI was used  / inspired from
+* Inspiration
+* etc
