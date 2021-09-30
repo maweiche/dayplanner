@@ -1,3 +1,20 @@
+//Current hour
+
+let currentHour = moment().format("HH");
+
+
+//Current date
+let updateDate = function () {
+    let currentDate = moment().format("dddd, MMMM Do YYYY");
+    $("#currentDay").text(currentDate)
+}
+//Current time
+let updateTime = function () {
+   let currentTime = moment().format('h:mm:ss');
+   $("#1").text(currentTime)
+}
+
+
 ///Establish variable for current day
 var cDay = [
     {
@@ -74,24 +91,35 @@ cDay.forEach(function(cHour) {
     });
     $(".container").append(hrRow);
 
+    //creates time display
+
+
+    //creates text area for schedule
+    var hrDisp = $("<p>")
+        .attr({"class": "col-6 description p-0"});
+    var txtData =$("<textarea>");
+    
+    hrDisp.append(hrRow);
+    txtData.attr("id", cDay.id);
+    if (cHour.time < currentHour) {
+        txtData.attr({
+            "class" : "past",
+        })
+    } else if (cHour.time === currentHour) {
+        txtData.attr({
+            "class": "present"
+        })
+    } else if (cHour.time > currentHour) {
+        txtData.attr({
+        "class": "future"
+        })
+    }
 })
 
 
 
 
 
-
-
-//Current date
-let updateDate = function () {
-    let currentDate = moment().format("dddd, MMMM Do YYYY");
-    $("#currentDay").text(currentDate)
-}
-//Current time
-let updateTime = function () {
-   let currentTime = moment().format('h:mm:ss');
-   $("#1").text(currentTime)
-}
 
 
 
