@@ -112,22 +112,22 @@ cDay.forEach(function(cHour) {
     txtData.attr("id", cHour.id);
     if (cHour.time < moment().format("HH")) {
         txtData.attr({
-            "class" : "past",
+            "class" : "row col past",
         })
     } else if (cHour.time === moment().format("HH")) {
         txtData.attr({
-            "class": "present"
+            "class": "row col present"
         })
     } else if (cHour.time > moment().format("HH")) {
         txtData.attr({
-        "class": "future"
+        "class": "row col future"
         })
     }
 
     ///creates the save button using an i tag and logo, and a button tag to append the i class to
     var saveButton = $("<i class = 'fa fa-save fa-lg'></i> ")
     var saveToDo = $("<button>")
-        .attr({"class": "col-md-1 saveBtn"});
+        .attr({"class": "saveBtn"});
 
     ///Append everything to page!!!!
     saveToDo.append(saveButton);
@@ -135,7 +135,12 @@ cDay.forEach(function(cHour) {
     
 })
 
-
+//create click event for save button
+$(".saveBtn").on("click", function(event) {
+    event.preventDefault();
+    //establish an index of what is being saved
+    var saveIndex = $(this).sibilings
+}
 
 
 
